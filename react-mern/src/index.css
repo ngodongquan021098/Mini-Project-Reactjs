@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,700;1,800;1,900&display=swap');
+@import 'react-toastify/dist/ReactToastify.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  div {
+    @apply select-none;
+  }
+  p,
+  h3 {
+    @apply select-text;
+  }
+  body {
+    @apply font-[Montserrat];
+  }
+}
+
+@layer components {
+  .bubble {
+    @apply absolute z-50 -bottom-[120px] w-[100px] h-[120px] rounded-[80%] transition-all shadow-bubble
+    cursor-pointer ease-linear after:content-[''] after:-bottom-[120px] after:left-[50%] after:z-10
+    after:absolute after:block after:m-auto after:h-[120px] after:w-[2px] after:bg-line-bubble
+    before:content-['▲'] before:text-[20px] before:text-center before:absolute before:-bottom-[16px] before:w-full before:z-20;
+  }
+}
+@keyframes moveTop {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+@layer utilities {
+  .clip-button-game {
+    clip-path: ellipse(50% 50% at 50% 50%);
+    position: relative;
+  }
+  .clip-button-game::before {
+    content: '';
+    display: block;
+    position: relative;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    background-color: #ff84e9;
+    clip-path: inherit;
+  }
+  .text-stroke-pause {
+    -webkit-text-stroke: 10px #f49af4;
+    position: relative;
+  }
+  .text-stroke-pause::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    -webkit-text-stroke: 0;
+    color: #f9f5ab;
+    pointer-events: none;
+  }
+
+  audio {
+    position: absolute;
+    width: 10%;
+    z-index: 100000000000;
+  }
+
+  audio::-webkit-media-controls-timeline {
+    display: none !important;
+  }
+
+  audio::-webkit-media-controls-timeline {
+    display: none;
+  }
+
+  /* Removes the time stamp */
+  audio::-webkit-media-controls-current-time-display {
+    display: none;
+  }
+  audio::-webkit-media-controls-time-remaining-display {
+    display: none;
+  }
+
+  /* Removes play-button */
+  audio::-webkit-media-controls-play-button {
+    display: none;
+  }
+
+  audio::-webkit-media-controls-panel {
+    background-color: transparent !important;
+    color: #000;
+  }
+}

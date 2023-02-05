@@ -1,0 +1,52 @@
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "ngodongquan",
+    "password": "ngodongquan"
+}
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "ngodongquan123",
+    "password": "ngodongquan"
+}
+
+###
+POST http://localhost:5000/api/post/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzRiZDEzOWM0MTgxOWZhMmMyMTcyZjEiLCJpYXQiOjE2NjY3OTk5Nzh9.eJW9CKh66Vt8J5dLaP4eh2uQUTUXL6Ehy6B87H81lZQ
+
+{
+    "title": "Vite",
+    "description": "Learning",
+    "url": "aaaaaa",
+    "status": "Learning"
+}
+
+###
+GET http://localhost:5000/api/post/get
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzRiZDEzOWM0MTgxOWZhMmMyMTcyZjEiLCJpYXQiOjE2NjU5MTMxNTN9.pNzvZxjSdaYpCqITTCeGOQwMx6fFtjwlmwwvru5x4RI
+
+###
+PUT http://localhost:5000/api/post/634bd9ec04a8be624fc5895b/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzRiZDEzOWM0MTgxOWZhMmMyMTcyZjEiLCJpYXQiOjE2NjU5MTMxNTN9.pNzvZxjSdaYpCqITTCeGOQwMx6fFtjwlmwwvru5x4RI
+
+{
+    "title": "Vite123",
+    "description": "aaaaa",
+    "url": "bbbb",
+    "status": "ccccc"
+}
+
+###
+GET http://localhost:5000/api/post/634bedc83db7e0c1656bc138/detail
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzRiZDEzOWM0MTgxOWZhMmMyMTcyZjEiLCJpYXQiOjE2NjU5MTMxNTN9.pNzvZxjSdaYpCqITTCeGOQwMx6fFtjwlmwwvru5x4RI
+
+###
+DELETE http://localhost:5000/api/post/634bef2668eea2c155e7ce38
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzRiZDEzOWM0MTgxOWZhMmMyMTcyZjEiLCJpYXQiOjE2NjU5MTMxNTN9.pNzvZxjSdaYpCqITTCeGOQwMx6fFtjwlmwwvru5x4RI
